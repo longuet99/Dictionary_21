@@ -40,7 +40,6 @@ public class Controller {
     @FXML
     private ListView listview ;
 
-
     TextToSpeech tts = new TextToSpeech();
     SQLiteDatabaseActions actions = new SQLiteDatabaseActions();
 
