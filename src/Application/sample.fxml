@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="631.0" prefWidth="673.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Controller">
+   <Group>
+      <children>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" height="630.0" stroke="BLACK" strokeMiterLimit="5000.0" width="673.0">
+            <fill>
+               <LinearGradient startY="0.4380952380952381">
+                  <stops>
+                     <Stop color="#df80ffcc" />
+                     <Stop color="#df80ffcc" offset="0.007662835249042145" />
+                     <Stop color="#82baffe3" offset="1.0" />
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Rectangle>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="399.0" layoutX="267.0" layoutY="143.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeWidth="10.0" width="370.0" />
+         <TextField fx:id="word" layoutX="25.0" layoutY="86.0" onAction="#Submit" onKeyTyped="#updateListView" prefHeight="36.0" prefWidth="457.0" promptText="  Type your word" style="-fx-background-radius: 20;">
+            <font>
+               <Font size="15.0" />
+            </font>
+            <effect>
+               <DropShadow color="#880da3c5" height="12.1" radius="5.55" width="12.1" />
+            </effect>
+         </TextField>
+         <Text layoutX="483.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dictionary2021">
+            <font>
+               <Font name="Arial Bold" size="25.0" />
+            </font>
+         </Text>
+         <WebView fx:id="webview" layoutX="262.0" layoutY="144.0" prefHeight="398.0" prefWidth="379.0" />
+         <JFXButton fx:id="btnlookup" layoutX="29.0" layoutY="36.0" onAction="#handleButtonAction" prefHeight="28.0" prefWidth="77.0" style="-fx-background-color: #d24dff; -fx-background-radius: 5;" text="LOOK UP">
+            <font>
+               <Font name="Calibri Bold" size="15.0" />
+            </font>
+         </JFXButton>
+         <Text fill="#131b36" layoutX="491.0" layoutY="594.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© Nhom 8">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Text>
+         <JFXButton fx:id="buttonedit" layoutX="201.0" layoutY="36.0" onAction="#handleButtonAction" prefHeight="28.0" prefWidth="77.0" style="-fx-background-color: #d24dff; -fx-background-radius: 5;" text="EDIT" textFill="#111111">
+            <font>
+               <Font name="Calibri Bold" size="15.0" />
+            </font>
+         </JFXButton>
+         <JFXButton fx:id="btntrans" layoutX="115.0" layoutY="36.0" onAction="#handleButtonAction" prefHeight="28.0" prefWidth="77.0" style="-fx-background-color: #d24dff; -fx-background-radius: 5;" text="Trans">
+            <font>
+               <Font name="Calibri Bold" size="15.0" />
+            </font>
+         </JFXButton>
+         <JFXButton ellipsisString="" layoutX="523.0" layoutY="90.0" minWidth="46.0" onAction="#speechWord" prefHeight="36.0" prefWidth="46.0" style="-fx-background-color: none; -fx-background-radius: 10;" textFill="#111111">
+            <font>
+               <Font name="Calibri Bold" size="11.0" />
+            </font>
+            <graphic>
+               <ImageView fitHeight="31.0" fitWidth="29.0" onDragDetected="#speechWord" pickOnBounds="true" preserveRatio="true" rotate="41.4">
+                  <image>
+                     <Image url="@loud-speaker.png" />
+                  </image>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </ImageView>
+            </graphic>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </JFXButton>
+         <JFXButton layoutX="482.0" layoutY="87.0" minWidth="46.0" onAction="#Submit" prefHeight="39.0" prefWidth="46.0" style="-fx-background-color: none; -fx-background-radius: 10;" textFill="#111111">
+            <font>
+               <Font name="Calibri Italic" size="1.0" />
+            </font>
+            <graphic>
+               <ImageView fitHeight="27.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@magnifying-search-lenses-tool.png" />
+                  </image>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </ImageView>
+            </graphic>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </JFXButton>
+         <ListView fx:id="listview" focusTraversable="false" layoutX="25.0" layoutY="138.0" onEditCommit="#Submit" onMouseClicked="#mouseclick" onMousePressed="#mouseclick" prefHeight="411.0" prefWidth="221.0" style="-fx-background-radius: 10;">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></ListView>
+
+      </children>
+   </Group>
+   <Group layoutX="30.0" layoutY="35.0" />
+</AnchorPane>
