@@ -9,12 +9,12 @@ import java.util.List;
 public class SQLiteDatabaseActions {
     public List<String> words = new ArrayList<>();
     private static Connection cnt = null;
+
     public static Connection connector() throws SQLException {
-        String url = "jdbc:sqlite:/Users/mvvj2/Desktop/Long/Dictionary_2021/src/dict_hh.db";
+        String url = "jdbc:sqlite:/Users/mvvj2/Desktop/OOP/Long/Dictionary_2021/src/dict_hh.db";
         if (cnt == null) {
             cnt = DriverManager.getConnection(url);
-        }
-        else {
+        } else {
             cnt.close();
             cnt = DriverManager.getConnection(url);
         }
@@ -61,11 +61,11 @@ public class SQLiteDatabaseActions {
 
     public void deleteWord(String word) throws SQLException {
         String sql = "DELETE FROM av WHERE word = ?";
-            Connection connection = connector();
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, word);
-            preparedStatement.executeUpdate();
-            preparedStatement.close();
+        Connection connection = connector();
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, word);
+        preparedStatement.executeUpdate();
+        preparedStatement.close();
     }
 
     public String updateWord(String degradedWord, String upgradeWord, String upgradeDescription, String upgradePronounce) throws SQLException {
@@ -114,6 +114,7 @@ public class SQLiteDatabaseActions {
         statement.close();
         conn.close();
     }
+
     public List<String> realtimeSearch(String preWord) throws SQLException {
         List<String> searchResult = new ArrayList<>();
         Connection connection = connector();
@@ -122,13 +123,10 @@ public class SQLiteDatabaseActions {
         ResultSet resultSet = statement.executeQuery(sql);
         while (resultSet.next()) {
             String word = resultSet.getString("word");
-            if (word.startsWith(preWord) && searchResult.size() < 12) {
+            if (word.startsWith(preWord) && searchResult.size() < 15) {
                 searchResult.add(word);
             }
         }
         return searchResult;
     }
-//    public List<String> getHint (String preprocessed) {
-//
-//    }
 }

@@ -110,7 +110,6 @@ public class Controller {
         engine.loadContent(actions.queryforHtml(finale));
     }
 
-
     @FXML
     private void handleButtonAction(ActionEvent event) throws Exception {
         Stage stage;

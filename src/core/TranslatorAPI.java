@@ -66,8 +66,6 @@ public class TranslatorAPI {
 
     // This function performs a simple POST call to Microsoft Translator Text Endpoint.
     public String makePOSTcalls(String word) throws IOException {
-//        String endline = "\n";
-//        if (word.equals(endline)) return endline;
 
             String ctnt = "[{\n\t\"Text\": \"" + word + "\"\n}]";
             // An RFC 2045 Media Type, appropriate to describe the content type of an HTTP request or response body.
